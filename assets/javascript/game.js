@@ -10,8 +10,10 @@ function blankWord(word) {
 
 document.onkeyup = function (event) {
     var key = event.key;
+    console.log(key);
 
     var computerWord = words[Math.floor(Math.random() * words.length)];
+    console.log(computerWord);
 
-    
+
 }
