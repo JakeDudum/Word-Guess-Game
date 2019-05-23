@@ -5,10 +5,18 @@
 body {
     height: 100%;
     margin: 0 auto;
+    background-image: url("../images/background.jpg");
+    background-size: 100%;
 }
 
 .container {
     width: 100%;
+}
+
+.content {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .display, .gameInfo {
