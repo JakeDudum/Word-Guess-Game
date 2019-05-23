@@ -11,11 +11,16 @@ function blankWord(word) {
     return blank;
 }
 
+function newWord() {
+    return words[Math.floor(Math.random() * words.length)];
+}
+
+var computerWord = words[Math.floor(Math.random() * words.length)];
+
 document.onkeyup = function (event) {
     var key = event.key;
     console.log(key);
 
-    var computerWord = words[Math.floor(Math.random() * words.length)];
     console.log(computerWord);
 
     var dashWord = blankWord(computerWord);
