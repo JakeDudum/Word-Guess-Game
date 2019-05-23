@@ -15,15 +15,25 @@ function newWord() {
     return words[Math.floor(Math.random() * words.length)];
 }
 
+function makeString(arr) {
+    var str = "";
+    for (var j = 0; j < arr.length; j++){
+        str = str + arr[j];
+    }
+    return str;
+}
+
 var computerWord = words[Math.floor(Math.random() * words.length)];
+
+var dashWord = blankWord(computerWord);
+
+document.getElementById("currentWord").textContent = makeString(dashWord);
 
 document.onkeyup = function (event) {
     var key = event.key;
     console.log(key);
 
     console.log(computerWord);
-
-    var dashWord = blankWord(computerWord);
 
     if (guessesLeft > 0) {
         if (computerWord.indexOf(key) > -1) {
@@ -32,6 +42,7 @@ document.onkeyup = function (event) {
                     dashWord[i] = key;
                     console.log(dashWord[i]);
                 }
+                document.getElementById("currentWord").textContent = makeString(dashWord);
             }
         }
         else {
