@@ -76,6 +76,7 @@ document.onkeyup = function (event) {
             if (dashWord.indexOf("-") === -1) {
                 numWins++;
                 update("wins", numWins);
+                document.getElementById("picture").src = ("assets/images/" + makeString(dashWord) + ".jpg");
                 newGame();
             }
         }

@@ -25,6 +25,13 @@ body {
     text-shadow: 3px 2px red;
 }
 
+img {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    height: auto;
+}
+
 h1, h2, span {
     color: white;
     margin-top: 20px;
