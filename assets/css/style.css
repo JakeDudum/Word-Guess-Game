@@ -19,6 +19,12 @@ body {
     height: 100%;
 }
 
+.header {
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 3px 2px red;
+}
+
 h1, h2, span {
     color: white;
 }
