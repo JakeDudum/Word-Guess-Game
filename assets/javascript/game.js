@@ -1,7 +1,6 @@
 var words = ["naruto", "bleach", "luffy", "kurosaki", "gon", "alchemist", "hunter", "bankai", "kamehameha", "dragon", "saiyan", "vegeta", "goku", "rasengan", "mugetsu", "bazooka", "navy", "marines", "roger"];
 
 var guessesLeft = parseInt(document.getElementById("numOfGuesses").textContent);
-console.log(guessesLeft);
 
 function blankWord(word) {
     var blank = [];
@@ -49,19 +48,14 @@ var numWins = 0;
 
 document.onkeyup = function (event) {
     var key = event.key;
-    console.log(key);
-
-    console.log(computerWord);
 
     if (guessesLeft > 0 && lettersGuessed.indexOf(key) === -1) {
         lettersGuessed.push(key);
         update("lettersGuessed", makeString(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
-            console.log(lettersGuessed);
             for (var i = 0; i < computerWord.length; i++) {
                 if (computerWord[i] === key) {
                     dashWord[i] = key;
-                    console.log(dashWord[i]);
                 }
                 update("currentWord", makeString(dashWord));
             }
