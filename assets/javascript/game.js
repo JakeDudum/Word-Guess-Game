@@ -63,7 +63,7 @@ var numWins = 0;
 document.onkeyup = function (event) {
     var key = event.key;
 
-    if (guessesLeft > 0 && lettersGuessed.indexOf(key) === -1) {
+    if (guessesLeft > 0 && lettersGuessed.indexOf(key.toLocaleUpperCase()) === -1) {
         lettersGuessed.push(key.toUpperCase());
         update("lettersGuessed", makeList(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
