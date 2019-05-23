@@ -27,6 +27,28 @@ body {
 
 h1, h2, span {
     color: white;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+span {
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+#numOfGuesses, #wins {
+    letter-spacing: 0;
+}
+
+#lettersGuessed {
+    letter-spacing: 3px;
 }
 
 .content {
