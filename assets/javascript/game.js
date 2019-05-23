@@ -24,12 +24,15 @@ document.onkeyup = function (event) {
     console.log(computerWord);
 
     var dashWord = blankWord(computerWord);
-    console.log(dashWord);
 
     if (guessesLeft > 0) {
         if (computerWord.indexOf(key) > -1) {
-            dashWord[computerWord.indexOf(key)] = key;
-            console.log(dashWord);
+            for (var i = 0; i < computerWord.length; i++) {
+                if (computerWord[i] === key) {
+                    dashWord[i] = key;
+                    console.log(dashWord[i]);
+                }
+            }
         }
         else {
             guessesLeft--;
