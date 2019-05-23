@@ -84,6 +84,7 @@ document.onkeyup = function (event) {
             guessesLeft--;
             update("numOfGuesses", guessesLeft);
             if (guessesLeft === 0) {
+                document.getElementById("picture").src = "assets/images/loser.jpg";
                 newGame();
             }
         }
