@@ -35,13 +35,15 @@ update("currentWord", makeString(dashWord));
 
 var lettersGuessed = [];
 
+var numWins = 0;
+
 document.onkeyup = function (event) {
     var key = event.key;
     console.log(key);
 
     console.log(computerWord);
 
-    if (guessesLeft > 0 && lettersGuessed.indexOf(key) < 0) {
+    if (guessesLeft > 0 && lettersGuessed.indexOf(key) === -1) {
         lettersGuessed.push(key);
         update("lettersGuessed", makeString(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
@@ -52,6 +54,10 @@ document.onkeyup = function (event) {
                     console.log(dashWord[i]);
                 }
                 update("currentWord", makeString(dashWord));
+            }
+            if (dashWord.indexOf("-") === -1) {
+                numWins++;
+                update("wins", numWins);
             }
         }
         else {
