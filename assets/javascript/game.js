@@ -23,6 +23,16 @@ function makeString(arr) {
     return str;
 }
 
+function newGame() {
+    computerWord = newWord();
+    dashWord = blankWord(computerWord);
+    guessesLeft = 12;
+    lettersGuessed = [];
+    update("currentWord", makeString(dashWord));
+    update("numOfGuesses", guessesLeft);
+    update("lettersGuessed", makeString(lettersGuessed));
+}
+
 function update(id, value) {
     document.getElementById(id).textContent = value;
 }
@@ -58,19 +68,14 @@ document.onkeyup = function (event) {
             if (dashWord.indexOf("-") === -1) {
                 numWins++;
                 update("wins", numWins);
+                newGame();
             }
         }
         else {
             guessesLeft--;
             update("numOfGuesses", guessesLeft);
             if (guessesLeft === 0) {
-                computerWord = newWord();
-                dashWord = blankWord(computerWord);
-                guessesLeft = 12;
-                lettersGuessed = [];
-                update("currentWord", makeString(dashWord));
-                update("numOfGuesses", guessesLeft);
-                update("lettersGuessed", makeString(lettersGuessed));
+                newGame();
             }
         }
     }
