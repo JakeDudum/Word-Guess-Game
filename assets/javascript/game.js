@@ -62,8 +62,9 @@ var numWins = 0;
 
 document.onkeyup = function (event) {
     var key = event.key;
+    var num = event.keyCode;
 
-    if (guessesLeft > 0 && lettersGuessed.indexOf(key.toLocaleUpperCase()) === -1) {
+    if (guessesLeft > 0 && lettersGuessed.indexOf(key.toLocaleUpperCase()) === -1 && num >= 65 && num <=90) {
         lettersGuessed.push(key.toUpperCase());
         update("lettersGuessed", makeList(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
