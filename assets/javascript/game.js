@@ -23,11 +23,15 @@ function makeString(arr) {
     return str;
 }
 
+function update(id, value) {
+    document.getElementById(id).textContent = value;
+}
+
 var computerWord = words[Math.floor(Math.random() * words.length)];
 
 var dashWord = blankWord(computerWord);
 
-document.getElementById("currentWord").textContent = makeString(dashWord);
+update("currentWord", makeString(dashWord));
 
 var lettersGuessed = [];
 
@@ -39,7 +43,7 @@ document.onkeyup = function (event) {
 
     if (guessesLeft > 0 && lettersGuessed.indexOf(key) < 0) {
         lettersGuessed.push(key);
-        document.getElementById("lettersGuessed").textContent = makeString(lettersGuessed);
+        update("lettersGuessed", makeString(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
             console.log(lettersGuessed);
             for (var i = 0; i < computerWord.length; i++) {
@@ -47,13 +51,21 @@ document.onkeyup = function (event) {
                     dashWord[i] = key;
                     console.log(dashWord[i]);
                 }
-                document.getElementById("currentWord").textContent = makeString(dashWord);
+                update("currentWord", makeString(dashWord));
             }
         }
         else {
             guessesLeft--;
-            document.getElementById("numOfGuesses").textContent = guessesLeft;
+            update("numOfGuesses", guessesLeft);
+            if (guessesLeft === 0) {
+                computerWord = newWord();
+                dashWord = blankWord(computerWord);
+                guessesLeft = 12;
+                lettersGuessed = [];
+                update("currentWord", makeString(dashWord));
+                update("numOfGuesses", guessesLeft);
+                update("lettersGuessed", makeString(lettersGuessed));
+            }
         }
     }
-
 }
