@@ -22,6 +22,20 @@ function makeString(arr) {
     return str;
 }
 
+function makeList (arr) {
+    var letters = "";
+    letters = arr[0];
+    if (arr.length === 1) {
+        return letters;
+    }
+    else {
+        for (var k = 1; k < arr.length; k++) {
+            letters = letters + ", " + arr[k];
+        }
+        return letters;
+    }
+}
+
 function newGame() {
     computerWord = newWord();
     dashWord = blankWord(computerWord);
@@ -50,8 +64,8 @@ document.onkeyup = function (event) {
     var key = event.key;
 
     if (guessesLeft > 0 && lettersGuessed.indexOf(key) === -1) {
-        lettersGuessed.push(key);
-        update("lettersGuessed", makeString(lettersGuessed));
+        lettersGuessed.push(key.toUpperCase());
+        update("lettersGuessed", makeList(lettersGuessed));
         if (computerWord.indexOf(key) > -1) {
             for (var i = 0; i < computerWord.length; i++) {
                 if (computerWord[i] === key) {
