@@ -29,7 +29,7 @@ img {
     margin-top: 10px;
     margin-left: 10px;
     width: 100%;
-    height: auto;
+    max-height: 95%;
 }
 
 h1, h2, span {
@@ -72,6 +72,7 @@ span {
 
 .display {
     width: 60%;
+    height: 100%;
 }
 
 .gameInfo {
