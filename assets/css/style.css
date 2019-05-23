@@ -6,3 +6,20 @@ body {
     height: 100%;
     margin: 0 auto;
 }
+
+.container {
+    width: 100%;
+}
+
+.display, .gameInfo {
+    text-align: center;
+    width: 50%;
+}
+
+.display {
+    float: left;
+}
+
+.gameInfo {
+    float: right;
+}
