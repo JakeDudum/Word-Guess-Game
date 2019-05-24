@@ -63,6 +63,7 @@ var numWins = 0;
 document.onkeyup = function (event) {
     var key = event.key;
     var num = event.keyCode;
+    document.getElementById("myaudio").play();
 
     if (guessesLeft > 0 && lettersGuessed.indexOf(key.toLocaleUpperCase()) === -1 && num >= 65 && num <=90) {
         lettersGuessed.push(key.toUpperCase());
